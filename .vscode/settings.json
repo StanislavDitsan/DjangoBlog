@@ -30,5 +30,8 @@
    "python.formatting.provider": "autopep8",
    "[django-html]": {
       "editor.defaultFormatter": "monosans.djlint"
+   },
+   "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
    }
 }
