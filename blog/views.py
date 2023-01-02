@@ -65,3 +65,14 @@ class PostDetail(View):
             },
         )
 
+
+class PostLike(View):
+    def post_like(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.likes.filter(id=self.request.user.id).exists():
+            post.likes.remove(self.request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
