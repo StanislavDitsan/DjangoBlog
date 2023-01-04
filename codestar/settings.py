@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['sd-95-django-blog.herokuapp.com', 'localhost']
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -54,6 +55,10 @@ INSTALLED_APPS = [
     'crispy_forms',
     'blog',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 SITE_ID = 1
 
