@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
 AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 SITE_ID = 2
